@@ -7,6 +7,23 @@
   font-size: 1.2rem;
 }
 
+.nav_button {
+  background-color: #1888ff;
+  border-radius: 4px;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+}
+
+.nav_button:hover {
+  background-color: #00bfff;
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+}
+
 .navbar-logo {
   color: #fff;
   justify-self: start;
@@ -24,7 +41,7 @@
 .nav-menu {
   display: grid;
   grid-template-columns: repeat(5, auto);
-  grid-gap: 10px;
+  grid-gap: 0px 10px;
   list-style: none;
   text-align: center;
   width: 70vw;

@@ -1,9 +1,11 @@
 import React from "react";
 import "./ProductCard.css";
 import { useNavigate } from "react-router-dom";
+import useAdd from "../../hooks/useAdd";
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
+  const { addToCart } = useAdd();
 
   const handleProductClick = () => {
     navigate(`/bit02spa/productDetail/${product.id}`, {
@@ -23,7 +25,7 @@ const ProductCard = ({ product }) => {
       />
       <h1>{product.title}</h1>
       <p>${product.price}</p>
-      <button>Add to cart</button>
+      <button onClick={() => addToCart(product)}>Add to cart</button>
     </div>
   );
 };

@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 /* import { Button } from "./Button"; */
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import { CartContext } from "../context/CartContext";
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -10,51 +11,28 @@ function Navbar() {
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
-  const onMouseEnter = () => {
-    if (window.innerWidth < 960) {
-      setDropdown(false);
-    } else {
-      setDropdown(true);
-    }
-  };
-
-  const onMouseLeave = () => {
-    if (window.innerWidth < 960) {
-      setDropdown(false);
-    } else {
-      setDropdown(false);
-    }
-  };
+  const { productCount } = useContext(CartContext);
 
   return (
     <>
       <nav className="navbar">
-        <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-          EPIC
-          <i class="fab fa-firstdraft" />
+        <Link to="/bit02spa" className="navbar-logo" onClick={closeMobileMenu}>
+          BITSTORE <i class="fab fa-sketch" />
         </Link>
         <div className="menu-icon" onClick={handleClick}>
           <i className={click ? "fas fa-times" : "fas fa-bars"} />
         </div>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">
-            <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-              Home
-            </Link>
-          </li>
-          <li
-            className="nav-item"
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-          >
             <Link
-              to="/services"
+              to="/bit02spa"
               className="nav-links"
               onClick={closeMobileMenu}
             >
-              Services <i className="fas fa-caret-down" />
+              Home
             </Link>
           </li>
+
           <li className="nav-item">
             <Link
               to="/products"
@@ -73,6 +51,30 @@ function Navbar() {
               Contact Us
             </Link>
           </li>
+          <li className="nav-item">
+            <Link
+              to="/contact-us"
+              className="nav_button"
+              onClick={closeMobileMenu}
+            >
+              Login{" "}
+              <span>
+                <i className="fas fa-sign-in-alt"></i>{" "}
+              </span>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/contact-us"
+              className="nav_button"
+              onClick={closeMobileMenu}
+            >
+              Register{" "}
+              <span>
+                <i className="fas fa-user"></i>{" "}
+              </span>
+            </Link>
+          </li>
           <li>
             <Link
               to="/sign-up"
@@ -83,7 +85,13 @@ function Navbar() {
             </Link>
           </li>
         </ul>
-        {/*  <Button /> */}
+
+        <Link to="/bit02spa/cart" className="nav_button">
+          <div>
+            <span>Cart ({productCount})</span>
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+        </Link>
       </nav>
     </>
   );
