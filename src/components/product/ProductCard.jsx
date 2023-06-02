@@ -6,7 +6,7 @@ const ProductCard = ({ product }) => {
   const navigate = useNavigate();
 
   const handleProductClick = () => {
-    navigate(`/productDetail/${product.id}`, {
+    navigate(`/bit02spa/productDetail/${product.id}`, {
       state: {
         product,
       },

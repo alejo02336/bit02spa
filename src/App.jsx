@@ -10,9 +10,12 @@ const App = () => {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/bit02spa" element={<Home />} />
         <Route path="*" element={<h1>Not Found</h1>} />
-        <Route path="/productDetail/:productId" element={<ProductDetail />} />
+        <Route
+          path="/bit02spa/productDetail/:productId"
+          element={<ProductDetail />}
+        />
       </Routes>
     </BrowserRouter>
   );
