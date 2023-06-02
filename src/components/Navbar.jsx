@@ -16,7 +16,7 @@ function Navbar() {
   return (
     <>
       <nav className="navbar">
-        <Link to="/bit02spa" className="navbar-logo" onClick={closeMobileMenu}>
+        <Link to="/bit02spa/" className="navbar-logo" onClick={closeMobileMenu}>
           BITSTORE <i class="fab fa-sketch" />
         </Link>
         <div className="menu-icon" onClick={handleClick}>
@@ -25,7 +25,7 @@ function Navbar() {
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">
             <Link
-              to="/bit02spa"
+              to="/bit02spa/"
               className="nav-links"
               onClick={closeMobileMenu}
             >
@@ -35,25 +35,17 @@ function Navbar() {
 
           <li className="nav-item">
             <Link
-              to="/products"
+              to="/bit02spa/"
               className="nav-links"
               onClick={closeMobileMenu}
             >
               Products
             </Link>
           </li>
+
           <li className="nav-item">
             <Link
-              to="/contact-us"
-              className="nav-links"
-              onClick={closeMobileMenu}
-            >
-              Contact Us
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/contact-us"
+              to="/bit02spa/login"
               className="nav_button"
               onClick={closeMobileMenu}
             >
@@ -65,7 +57,7 @@ function Navbar() {
           </li>
           <li className="nav-item">
             <Link
-              to="/contact-us"
+              to="/bit02spa/register"
               className="nav_button"
               onClick={closeMobileMenu}
             >
@@ -75,7 +67,7 @@ function Navbar() {
               </span>
             </Link>
           </li>
-          <li>
+          {/*     <li>
             <Link
               to="/sign-up"
               className="nav-links-mobile"
@@ -83,7 +75,7 @@ function Navbar() {
             >
               Sign Up
             </Link>
-          </li>
+          </li> */}
         </ul>
 
         <Link to="/bit02spa/cart" className="nav_button">
