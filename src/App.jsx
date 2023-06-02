@@ -1,37 +1,21 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import React from "react";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import Navbar from "./components/Navbar";
 import "./App.css";
+import Home from "./pages/Home/Home.jsx";
+import ProductDetail from "./components/product/ProductDetail";
 
-export default function App() {
-  const [count, setCount] = useState(0);
-
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <ComponenteTest />
-      <ComponenteTest2 />
-    </>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<h1>Not Found</h1>} />
+        <Route path="/productDetail/:productId" element={<ProductDetail />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
-
-function ComponenteTest() {
-  return (
-    <div>
-      <h1>Componente en el mismo archivo</h1>
-      <ComponenteTest2 />
-    </div>
-  );
-}
-
-const ComponenteTest2 = () => {
-  return <h1>Otro en el mismo archivo</h1>;
 };
+
+export default App;

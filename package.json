@@ -1,5 +1,4 @@
 {
-  "homepage": "https://alejo02336.github.io/bit02spa/",
   "name": "bit02spa",
   "private": true,
   "version": "0.0.0",
@@ -14,7 +13,8 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

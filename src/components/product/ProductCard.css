@@ -1,0 +1,48 @@
+.product_image {
+  height: 220px;
+  width: 220px;
+  object-fit: contain;
+}
+
+.product_image:hover {
+  cursor: pointer;
+}
+
+.card_container {
+  padding: 20px 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.card_container:hover {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card_container button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #00bf19;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.card_container button:hover {
+  background-color: #00ff2b;
+}
+
+.card_container h1 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 210px;
+}
+
+.card_container p {
+  margin: 5px 0px;
+}
